@@ -17,11 +17,6 @@ export default defineType({
         icon:  ActivityIcon
       },
       {
-        name: 'websiteInfo',
-        title: 'Website Info',
-        icon: TextIcon
-      },
-      {
         name: 'social',
         title: 'Social Medias',
         icon: MobileDeviceIcon
@@ -41,10 +36,10 @@ export default defineType({
         group: "updates"
       },
       {
-        title: "Title",
-        name: "title",
+        title: "Location",
+        name: "location",
         type: "string",
-        group: "websiteInfo"
+        group: "updates"
       },
       {
         title: "Social Medias",

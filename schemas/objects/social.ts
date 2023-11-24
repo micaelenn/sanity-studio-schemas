@@ -4,7 +4,7 @@ import { MobileDeviceIcon } from '@sanity/icons'
 export default defineType({
     name: 'socialSchema',
     title: 'General',
-    type: 'document',
+    type: 'object',
     icon: MobileDeviceIcon,
     fields: [
         {
@@ -15,7 +15,7 @@ export default defineType({
         {
             name: 'url',
             title: 'URL',
-            type: 'url'
+            type: 'string'
         }
     ]
 })

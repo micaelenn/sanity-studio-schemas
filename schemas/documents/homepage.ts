@@ -13,6 +13,11 @@ export default defineType({
             type: 'image'
         },
         {
+            name: 'title',
+            title: 'Title',
+            type: 'string'
+        },
+        {
             name: 'description',
             title: 'Description',
             type: 'array', 

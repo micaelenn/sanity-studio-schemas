@@ -2,8 +2,8 @@ import { defineType } from "sanity"
 import { MobileDeviceIcon } from '@sanity/icons'
 
 export default defineType({
-    name: 'socialSchema',
-    title: 'General',
+    name: 'social',
+    title: 'Social',
     type: 'object',
     icon: MobileDeviceIcon,
     fields: [

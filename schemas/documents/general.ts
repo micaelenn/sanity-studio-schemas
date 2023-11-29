@@ -24,29 +24,34 @@ export default defineType({
     ],
     fields: [
       {
-        title: "Learning",
-        name: "learning",
-        type: "string",
-        group: "updates"
-      },
-      {
-        title: "Playing",
-        name: "playing",
-        type: "string",
-        group: "updates"
-      },
-      {
-        title: "Location",
-        name: "location",
-        type: "string",
-        group: "updates"
+        name: 'updates',
+        title: 'Updates',
+        type: 'object',
+        group: "updates",
+        fields: [
+          {
+            title: "Learning",
+            name: "learning",
+            type: "string",
+          },
+          {
+            title: "Playing",
+            name: "playing",
+            type: "string",
+          },
+          {
+            title: "Location",
+            name: "location",
+            type: "string",
+          },
+        ],
       },
       {
         title: "Social Medias",
         name: "socialMedias",
         group: "social",
         type: 'array',
-        of: [{ type: "socialSchema" }]
+        of: [{ type: "social" }]
       }
     ]
 })

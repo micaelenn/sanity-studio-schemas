@@ -1,8 +1,5 @@
 import { defineType } from "sanity";
-import { StackIcon } from '@sanity/icons'
-import { ActivityIcon } from '@sanity/icons'
-import { TextIcon } from '@sanity/icons'
-import { MobileDeviceIcon } from '@sanity/icons'
+import { ActivityIcon,  StackIcon, MobileDeviceIcon } from '@sanity/icons'
 
 export default defineType({
   name: 'generalSchema',
@@ -20,7 +17,7 @@ export default defineType({
         name: 'social',
         title: 'Social Medias',
         icon: MobileDeviceIcon
-      }
+      },
     ],
     fields: [
       {

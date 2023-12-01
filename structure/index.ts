@@ -27,7 +27,7 @@ export const structure = (S: StructureBuilder , context: ConfigContext) =>
       .icon(StackIcon)
       .child(
       S.document()
-          .title('General Content')
+          .title('General')
           .schemaType('generalSchema')
           .documentId('general')
       ),
@@ -37,7 +37,7 @@ export const structure = (S: StructureBuilder , context: ConfigContext) =>
       .icon(HomeIcon)
       .child(
       S.document()
-          .title('Homepage Content')
+          .title('Homepage')
           .schemaType('homepageSchema')
           .documentId('homepage')
       ),

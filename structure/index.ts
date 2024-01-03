@@ -1,7 +1,7 @@
 import { ConfigContext } from 'sanity'
 import { StructureBuilder } from 'sanity/desk'
 import { ListItemBuilder } from 'sanity/desk'
-import { StackIcon, HomeIcon } from '@sanity/icons'
+import { StackIcon, HomeIcon, TiersIcon } from '@sanity/icons'
 
 // prevent schema repetition
 const hiddenDocTypes = (listItem: ListItemBuilder) => {
@@ -13,7 +13,8 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
   
     return ![
       'generalSchema',
-      'homepageSchema'
+      'homepageSchema',
+      'tilListingSchema'
     ].includes(id)
   }
 
@@ -40,6 +41,16 @@ export const structure = (S: StructureBuilder , context: ConfigContext) =>
           .title('Homepage')
           .schemaType('homepageSchema')
           .documentId('homepage')
+      ),
+      // TODAY I LEARNED (PAGE)
+      S.listItem()
+      .title('Today I Learned (page)')
+      .icon(TiersIcon)
+      .child(
+      S.document()
+          .title('Today I Learned (page)')
+          .schemaType('tilListingSchema')
+          .documentId('tilListingPage')
       ),
       ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])

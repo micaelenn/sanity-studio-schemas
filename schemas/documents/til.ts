@@ -1,9 +1,10 @@
 import { defineType } from "sanity"
 import {BlockContentIcon, RobotIcon, TerminalIcon } from '@sanity/icons'
+import formatSlug from "../../utils/helpers/string"
 
 export default defineType({
     name: 'tilSchema',
-    title: 'Today I Learned',
+    title: 'Today I Learned (posts)',
     type: 'document',
     icon: TerminalIcon,
     groups: [
@@ -21,45 +22,46 @@ export default defineType({
     ],
     fields: [
         {
-            name: 'Content',
-            type: 'object',
-            icon: TerminalIcon,
-            group: 'pageContent',
-            fields: [
-                {
-                    title: "Title",
-                    name: "title",
-                    type: "string",
-                },
-                {
-                    title: "Subject",
-                    name: "subject",
-                    type: "string",
-                },
-                {
-                    name: 'description',
-                    title: 'Description',
-                    type: 'array', 
-                    of: [{type: 'block'}]
-                }
-            ]
+            title: "Title",
+            name: "title",
+            type: "string",
         },
         {
-            name: 'homepage',
+            title: "Slug",
+            name: "slug",
+            type: "slug",
+            description: 'Click in "Generate" to add a slug based on the post title',
+            options: {
+                source: 'title',
+                slugify: formatSlug
+            }
+        },
+        {
+            title: "Subject",
+            name: "subject",
+            type: "string",
+        },
+        {
+            title: 'Content',
+            name: 'content',
+            type: 'array', 
+            of: [{type: 'block'}]
+        },
+        {
             title: 'SEO',
+            name: 'seo',
             type: 'object',
             icon: BlockContentIcon,
-            group: 'seo',
             fields: [
                 {
                     name: 'title',
                     title: 'Meta Title',
-                    type: 'string'
+                    type: 'string',
                 },
                 {
                     name: 'description',
                     title: 'Meta Description',
-                    type: 'text'
+                    type: 'text',
                 }
             ]
         },

@@ -1,11 +1,11 @@
 import { defineType } from "sanity"
-import { HomeIcon, BlockContentIcon, RobotIcon } from '@sanity/icons'
+import { TerminalIcon, BlockContentIcon, RobotIcon } from '@sanity/icons'
 
 export default defineType({
-    name: 'homepageSchema',
-    title: 'Homepage',
+    name: 'tilListingSchema',
+    title: 'Today I Learned (page)',
     type: 'document',
-    icon: HomeIcon,
+    icon: TerminalIcon,
     groups: [
         {
           name: 'pageContent',
@@ -21,17 +21,12 @@ export default defineType({
     ],
     fields: [
         {
-            name: 'introduction',
-            title: 'Introduction',
+            name: 'content',
+            title: 'Content',
             type: 'object',
             icon: BlockContentIcon,
             group: 'pageContent',
             fields: [
-                {
-                    name: 'image',
-                    title: 'Image',
-                    type: 'image'
-                },
                 {
                     name: 'title',
                     title: 'Title',
@@ -46,7 +41,7 @@ export default defineType({
             ]
         },
         {
-            name: 'homepage',
+            name: 'seo',
             title: 'SEO',
             type: 'object',
             icon: BlockContentIcon,

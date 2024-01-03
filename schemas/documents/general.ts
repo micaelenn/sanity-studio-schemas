@@ -1,5 +1,5 @@
 import { defineType } from "sanity";
-import { ActivityIcon,  StackIcon, MobileDeviceIcon } from '@sanity/icons'
+import { ActivityIcon, StackIcon, MobileDeviceIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'generalSchema',
@@ -49,6 +49,6 @@ export default defineType({
         group: "social",
         type: 'array',
         of: [{ type: "social" }]
-      }
+      },
     ]
 })

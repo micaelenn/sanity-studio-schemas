@@ -1,11 +1,9 @@
 import { defineType } from "sanity"
-import { MobileDeviceIcon } from '@sanity/icons'
 
 export default defineType({
-    name: 'social',
-    title: 'Social',
+    name: 'menu',
+    title: 'Menu',
     type: 'object',
-    icon: MobileDeviceIcon,
     fields: [
         {
             name: 'name',
@@ -13,8 +11,13 @@ export default defineType({
             type: 'string'
         },
         {
+            name: 'icon',
+            title: 'Icon',
+            type: 'image'
+        },
+        {
             name: 'url',
-            title: 'URL',
+            title: 'URL/path',
             type: 'string'
         }
     ]

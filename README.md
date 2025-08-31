@@ -1,7 +1,7 @@
 # Sanity Studio schemas
 
 ## Requirements
-- [Node.js](https://nodejs.org/en) - `18.0.0 +`
+- [Node.js](https://nodejs.org/en) - `22 +`
 
 ## Getting Started
 

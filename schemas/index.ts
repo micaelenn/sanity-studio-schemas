@@ -1,16 +1,12 @@
-// Documents
-import general from './documents/general'
+// documents
 import homepage from './documents/homepage'
-import tilListing from './documents/tilListing'
-import til from './documents/til'
 
-// Objects
+// objects
 import menu from './objects/menu'
+import seo from './objects/seo'
 
 export const schemaTypes = [
-    general,
     homepage,
-    tilListing,
-    til,
-    menu
+    menu,
+    seo,
 ]

@@ -1,26 +1,17 @@
 // external modules
-import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
-import { visionTool } from '@sanity/vision'
-import { schemaTypes } from './schemas'
+import { defineConfig } from "sanity"
+import { structureTool } from "sanity/structure"
+import { visionTool } from "@sanity/vision"
 
 // internal modules
-import { projectID, dataset } from './utils/config/enviroment'
-import { structure } from './structure/index'
+import { schema } from "./schemas/schema"
+import { projectID, dataset } from "./utils/config/enviroment"
 
 export default defineConfig({
-  name: 'default',
-  title: 'website',
-
+  name: "default",
+  title: "cms",
   projectId: projectID,
   dataset: dataset,
-
-  plugins: [
-    deskTool({structure}),
-    visionTool(),
-  ],
-
-  schema: {
-    types: schemaTypes,
-  },
+  schema,
+  plugins: [structureTool(), visionTool()]
 })

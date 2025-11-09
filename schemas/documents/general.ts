@@ -8,8 +8,13 @@ export default defineType({
   icon: StackIcon,
     groups: [
       {
-        name: 'updates',
-        title: 'Updates',
+        name: 'menu',
+        title: 'Menu',
+        icon: MenuIcon
+      },
+      {
+        name: 'header',
+        title: 'Header',
         default: true,
         icon:  ActivityIcon
       },
@@ -18,47 +23,32 @@ export default defineType({
         title: 'Social Medias',
         icon: MobileDeviceIcon
       },
-      {
-        name: 'menu',
-        title: 'Menu',
-        icon: MenuIcon
-      },
     ],
     fields: [
       {
+        title: "Menu",
+        name: "menu",
+        group: "menu",
+        type: 'array',
+        of: [{ type: "menu" }]
+      },
+      {
+        name: 'title',
+        title: 'Title',
+        type: 'string',
+        group: "header",
+      },
+      {
         name: 'updates',
         title: 'Updates',
-        type: 'object',
-        group: "updates",
-        fields: [
-          {
-            title: "Learning",
-            name: "learning",
-            type: "string",
-          },
-          {
-            title: "Playing",
-            name: "playing",
-            type: "string",
-          },
-          {
-            title: "Location",
-            name: "location",
-            type: "string",
-          },
-        ],
+        group: "header",
+        type: 'array',
+        of: [{ type: "updates" }]
       },
       {
         title: "Social Medias",
         name: "socialMedias",
         group: "social",
-        type: 'array',
-        of: [{ type: "menu" }]
-      },
-      {
-        title: "Menu",
-        name: "menu",
-        group: "menu",
         type: 'array',
         of: [{ type: "menu" }]
       },

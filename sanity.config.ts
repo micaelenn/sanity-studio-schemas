@@ -9,9 +9,37 @@ import { projectID, dataset } from "./utils/config/enviroment"
 
 export default defineConfig({
   name: "default",
-  title: "cms",
+  title: "Micaelen's website",
   projectId: projectID,
   dataset: dataset,
   schema,
-  plugins: [structureTool(), visionTool()]
+  plugins: [
+    structureTool({
+      structure: (S) =>
+       S.list()
+      .title("Content")
+      .items([
+        S.listItem()
+          .title("Homepage")
+          .icon(() => "🏠")
+          .child(
+            S.document()
+              .schemaType("homepage")
+              .documentId("homepage")
+          ),
+        S.listItem()
+          .title("General")
+          .icon(() => "👾")
+          .child(
+            S.document()
+              .schemaType("generalSchema")
+              .documentId("generalSchema")
+          ),
+        ...S.documentTypeListItems().filter(
+          (item) => !["homepage", "generalSchema"].includes(item.getId() ?? "")
+        ),
+      ]),
+    }),
+    visionTool(),
+  ],
 })

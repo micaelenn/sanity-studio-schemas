@@ -6,19 +6,20 @@ export default defineType({
     type: 'object',
     fields: [
         {
-            name: 'name',
-            title: 'Name',
-            type: 'string'
+          name: 'name',
+          title: 'Name',
+          type: 'string'
         },
         {
-            name: 'icon',
-            title: 'Icon',
-            type: 'image'
+          name: 'icon',
+          title: 'SVG Raw',
+          type: "text",
+          rows: 5 
         },
         {
-            name: 'url',
-            title: 'URL/path',
-            type: 'string'
+          name: 'url',
+          title: 'URL/path',
+          type: 'string'
         }
     ]
 })

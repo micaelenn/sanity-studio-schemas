@@ -2,67 +2,68 @@ import { defineType } from "sanity"
 import { HomeIcon, BlockContentIcon, RobotIcon } from '@sanity/icons'
 
 export default defineType({
-    name: 'homepageSchema',
-    title: 'Homepage',
-    type: 'document',
-    icon: HomeIcon,
-    groups: [
+  title: 'Homepage',
+  name: 'homepage',
+  type: 'document',
+  icon: HomeIcon,
+  groups: [
+    {
+      name: 'pageContent',
+      title: 'Content',
+      default: true,
+      icon: BlockContentIcon
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      icon: RobotIcon
+    }
+  ],
+  fields: [
+    {
+      name: 'introduction',
+      title: 'Introduction',
+      type: 'object',
+      icon: BlockContentIcon,
+      group: 'pageContent',
+      fields: [
         {
-          name: 'pageContent',
-          title: 'Content',
-          default: true,
-          icon:  BlockContentIcon
+          name: 'image',
+          title: 'Image',
+          type: 'image'
         },
         {
-          name: 'seo',
-          title: 'SEO',
-          icon: RobotIcon
+          name: 'description',
+          title: 'Description',
+          type: 'array',
+          of: [{ type: 'block' }]
+        },
+        {
+         name: 'stack',
+         title: 'Tech Stack',
+         type: 'array',
+         of: [{ type: 'string' }]
         }
-    ],
-    fields: [
+      ]
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'object',
+      icon: RobotIcon,
+      group: 'seo',
+      fields: [
         {
-            name: 'introduction',
-            title: 'Introduction',
-            type: 'object',
-            icon: BlockContentIcon,
-            group: 'pageContent',
-            fields: [
-                {
-                    name: 'image',
-                    title: 'Image',
-                    type: 'image'
-                },
-                {
-                    name: 'title',
-                    title: 'Title',
-                    type: 'string'
-                },
-                {
-                    name: 'description',
-                    title: 'Description',
-                    type: 'array', 
-                    of: [{type: 'block'}]
-                }
-            ]
+          name: 'title',
+          title: 'Meta Title',
+          type: 'string',
         },
         {
-            name: 'homepage',
-            title: 'SEO',
-            type: 'object',
-            icon: BlockContentIcon,
-            group: 'seo',
-            fields: [
-                {
-                    name: 'title',
-                    title: 'Meta Title',
-                    type: 'string',
-                },
-                {
-                    name: 'description',
-                    title: 'Meta Description',
-                    type: 'text',
-                }
-            ]
-        },
-    ]
+          name: 'description',
+          title: 'Meta Description',
+          type: 'text',
+        }
+      ]
+    },
+  ]
 })

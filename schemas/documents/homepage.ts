@@ -28,11 +28,6 @@ export default defineType({
       group: 'pageContent',
       fields: [
         {
-          name: 'image',
-          title: 'Image',
-          type: 'image'
-        },
-        {
           name: 'description',
           title: 'Description',
           type: 'array',

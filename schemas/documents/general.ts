@@ -1,5 +1,5 @@
 import { defineType } from "sanity";
-import { ActivityIcon, StackIcon, MobileDeviceIcon, MenuIcon } from '@sanity/icons'
+import { ActivityIcon, StackIcon, MenuIcon } from '@sanity/icons'
 
 export default defineType({
   name: 'generalSchema',
@@ -17,11 +17,6 @@ export default defineType({
         title: 'Header',
         default: true,
         icon:  ActivityIcon
-      },
-      {
-        name: 'social',
-        title: 'Social Medias',
-        icon: MobileDeviceIcon
       },
     ],
     fields: [
@@ -44,13 +39,6 @@ export default defineType({
         group: "header",
         type: 'array',
         of: [{ type: "updates" }]
-      },
-      {
-        title: "Social Medias",
-        name: "socialMedias",
-        group: "social",
-        type: 'array',
-        of: [{ type: "menu" }]
       },
     ]
 })

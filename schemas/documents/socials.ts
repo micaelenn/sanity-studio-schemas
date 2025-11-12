@@ -2,11 +2,11 @@ import { defineType } from "sanity";
 import { ActivityIcon, StackIcon, RobotIcon } from '@sanity/icons'
 
 export default defineType({
-  name: 'homepage',
-  title: 'Homepage',
+  name: 'socials',
+  title: 'Socials',
   type: 'document',
   icon: StackIcon,
-  groups: [
+    groups: [
       {
         name: 'content',
         title: 'Content',
@@ -27,18 +27,11 @@ export default defineType({
         group: "content",
       },
       {
-        name: 'description',
-        title: 'Description',
+        title: "Social Medias",
+        name: "socialMedias",
+        group: "content",
         type: 'array',
-        group: 'content',
-        of: [{ type: 'block' }]
-      },
-      {
-        name: 'stack',
-        title: 'Tech Stack',
-        type: 'array',
-        group: 'content',
-        of: [{ type: 'string' }]
+        of: [{ type: "menu" }]
       },
       {
         title: "SEO",

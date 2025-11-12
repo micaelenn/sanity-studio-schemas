@@ -35,8 +35,29 @@ export default defineConfig({
               .schemaType("generalSchema")
               .documentId("generalSchema")
           ),
+        S.listItem()
+          .title("About")
+          .icon(() => "👾")
+          .child(
+            S.document()
+              .schemaType("about")
+              .documentId("about")
+          ),
+        S.listItem()
+          .title("Socials")
+          .icon(() => "👾")
+          .child(
+            S.document()
+              .schemaType("socials")
+              .documentId("socials")
+          ),
         ...S.documentTypeListItems().filter(
-          (item) => !["homepage", "generalSchema"].includes(item.getId() ?? "")
+          (item) => ![
+            "homepage", 
+            "generalSchema", 
+            "about", 
+            "socials",
+          ].includes(item.getId() ?? "")
         ),
       ]),
     }),

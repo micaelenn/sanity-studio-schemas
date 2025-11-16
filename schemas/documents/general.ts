@@ -37,8 +37,7 @@ export default defineType({
         name: 'updates',
         title: 'Updates',
         group: "header",
-        type: 'array',
-        of: [{ type: "updates" }]
+        type: 'updates',
       },
     ]
 })

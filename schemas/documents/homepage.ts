@@ -7,44 +7,44 @@ export default defineType({
   type: 'document',
   icon: StackIcon,
   groups: [
-      {
-        name: 'content',
-        title: 'Content',
-        default: true,
-        icon: ActivityIcon
-      },
-      {
-        name: 'seo',
-        title: 'SEO',
-        icon: RobotIcon
-      }
-    ],
-    fields: [
-      {
-        name: 'title',
-        title: 'Title',
-        type: 'string',
-        group: "content",
-      },
-      {
-        name: 'description',
-        title: 'Description',
-        type: 'array',
-        group: 'content',
-        of: [{ type: 'block' }]
-      },
-      {
-        name: 'stack',
-        title: 'Tech Stack',
-        type: 'array',
-        group: 'content',
-        of: [{ type: 'string' }]
-      },
-      {
-        title: "SEO",
-        name: "seo",
-        group: "seo",
-        type: "seo"
-      }
-    ]
+    {
+      name: 'content',
+      title: 'Content',
+      default: true,
+      icon: ActivityIcon
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      icon: RobotIcon
+    }
+  ],
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      group: "content",
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      group: 'content',
+      of: [{ type: 'block' }]
+    },
+    {
+      name: 'stack',
+      title: 'Tech Stack',
+      type: 'array',
+      group: 'content',
+      of: [{ type: 'string' }]
+    },
+    {
+      title: "SEO",
+      name: "seo",
+      group: "seo",
+      type: "seo"
+    }
+  ]
 })

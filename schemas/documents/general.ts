@@ -6,38 +6,39 @@ export default defineType({
   title: 'General',
   type: 'document',
   icon: StackIcon,
-    groups: [
-      {
-        name: 'menu',
-        title: 'Menu',
-        icon: MenuIcon
-      },
-      {
-        name: 'header',
-        title: 'Header',
-        default: true,
-        icon:  ActivityIcon
-      },
-    ],
-    fields: [
-      {
-        title: "Menu",
-        name: "menu",
-        group: "menu",
-        type: 'array',
-        of: [{ type: "menu" }]
-      },
-      {
-        name: 'title',
-        title: 'Title',
-        type: 'string',
-        group: "header",
-      },
-      {
-        name: 'updates',
-        title: 'Updates',
-        group: "header",
-        type: 'updates',
-      },
-    ]
+  groups: [
+    {
+      name: 'menu',
+      title: 'Menu',
+      icon: MenuIcon
+    },
+    {
+      name: 'header',
+      title: 'Header',
+      default: true,
+      icon: ActivityIcon
+    },
+  ],
+  fields: [
+    {
+      title: "Menu",
+      name: "menu",
+      group: "menu",
+      type: 'array',
+      of: [{ type: "menu" }]
+    },
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      group: "header",
+    },
+    {
+      name: 'updates',
+      title: 'Updates',
+      type: 'array',
+      group: 'header',
+      of: [{ type: 'string' }]
+    },
+  ]
 })
